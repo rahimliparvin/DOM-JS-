@@ -171,10 +171,11 @@
 let btn = document.querySelector("#products button");
 let input = document.querySelector("#products input");
 // let header =document.querySelector("#products h1");
-let ul  = document.querySelector("#products ul");
+let ul = document.querySelector("#products ul");
+let li = document.querySelector("#products li");
 
 
- //<li class="list-group-item">Salam</li> 
+//<li class="list-group-item">Salam</li> 
 
 
 // btn.addEventListener("click",function(){
@@ -184,7 +185,7 @@ let ul  = document.querySelector("#products ul");
 // })
 
 
-btn.addEventListener("click",function(){
+btn.addEventListener("click", function () {
 
     if (input.value.trim() == "") {
         alert("Don't empty")
@@ -201,22 +202,23 @@ btn.addEventListener("click",function(){
             return;
         }
     }
-   
+
     let inputValue = input.value;
     let li = document.createElement("li");
     li.className = "list-group-item mt-2";
     li.innerText = inputValue;
-    
+
     ul.append(li);
     input.value = "";
-   
+
+
+
+    li.addEventListener("click", function () {
+
+        li.remove();
+    });
+
 })
 
-let li = document.querySelector("#products li");
 
-ul.addEventListener("click",function(){
-   
-    let li = document.querySelector("#products ul li");
-    
-    
-});
+
